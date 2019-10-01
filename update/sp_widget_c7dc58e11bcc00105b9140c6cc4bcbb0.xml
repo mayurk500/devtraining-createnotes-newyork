@@ -14,7 +14,14 @@
 		$rootScope.$emit('selectNote',id);
 	}
 	$rootScope.$on('updateNote',function(event,data){
-		console.log('in on event..'+$rootScope.noteId1+'...'+data);
+		console.log('in on event..'+$rootScope.noteId1+'...'+data+'....'+$rootScope.noteD.title+'...'+$rootScope.noteD.note);
+		for(var indexv in c.data.notes){
+			console.log('check for loop of notes object...'+c.data.notes[indexv].title);
+			if(c.data.notes[indexv].sys_id == data){
+				 c.data.notes[indexv].title = $rootScope.noteD.title;
+				 c.data.notes[indexv].note =  $rootScope.noteD.note;
+			}
+		}
 	});
 }]]></client_script>
         <controller_as>c</controller_as>
@@ -54,14 +61,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2019-09-22 04:55:26</sys_created_on>
         <sys_id>c7dc58e11bcc00105b9140c6cc4bcbb0</sys_id>
-        <sys_mod_count>17</sys_mod_count>
+        <sys_mod_count>20</sys_mod_count>
         <sys_name>Notes List</sys_name>
         <sys_package display_value="CreateNotes" source="x_snc_createnotes">df5fd9a5090232007f44e1046c8ff69f</sys_package>
         <sys_policy/>
         <sys_scope display_value="CreateNotes">df5fd9a5090232007f44e1046c8ff69f</sys_scope>
         <sys_update_name>sp_widget_c7dc58e11bcc00105b9140c6cc4bcbb0</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2019-09-30 10:29:37</sys_updated_on>
+        <sys_updated_on>2019-10-01 06:24:59</sys_updated_on>
         <template><![CDATA[<div class='panel	panel-default'>
   <div class='panel-heading clearfix'>
     <h3 class='panel-title pull-left'>
